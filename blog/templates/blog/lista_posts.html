@@ -1,0 +1,27 @@
+{% extends 'blog/base.html' %}
+{% block title %}Lista de Posts{% endblock %}
+{% block content %}
+    <h1 class="mb-4">Posts Recentes</h1>
+
+    {% if posts %}
+        <div class="row">
+            {% for post in posts %}
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ post.titulo }}</h5>
+                            <p class="card-text text-muted small">{{ post.criado_em|date:"d/m/Y H:i" }}</p>
+                            <p class="card-text">{{ post.conteudo|truncatewords:20 }}</p>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <a href="{% url 'editar_post' post.id %}" class="btn btn-warning btn-sm">Editar</a>
+                            <a href="{% url 'deletar_post' post.id %}" class="btn btn-danger btn-sm">Deletar</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="alert alert-info">Ainda não há posts publicados.</div>
+    {% endif %}
+{% endblock %}

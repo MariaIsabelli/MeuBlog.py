@@ -1,0 +1,23 @@
+{% load form_filters %}
+{% extends 'blog/base.html' %}
+{% block title %}Novo Post{% endblock %}
+{% block content %}
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h2 class="card-title mb-4">Novo Post</h2>
+            <form method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                    {{ form.titulo.label_tag }}
+                    {{ form.titulo|add_class:"form-control" }}
+                </div>
+                <div class="mb-3">
+                    {{ form.conteudo.label_tag }}
+                    {{ form.conteudo|add_class:"form-control" }}
+                </div>
+                <button type="submit" class="btn btn-primary">Salvar</button>
+                <a href="{% url 'lista_posts' %}" class="btn btn-secondary">Cancelar</a>
+            </form>
+        </div>
+    </div>
+{% endblock %}
