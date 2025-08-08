@@ -1,6 +1,6 @@
 # 📝 Projeto Blog - Django
 
-Este projeto foi desenvolvido como parte da **Unidade 3** da disciplina, com o objetivo de praticar os conceitos de **Programação Orientada a Objetos (POO)** aplicados ao framework **Django**.
+Este projeto foi desenvolvido como parte da **Unidade 2** da disciplina, com o objetivo de praticar os conceitos de **Programação Orientada a Objetos (POO)** aplicados ao framework **Django**.
 
 O sistema consiste em um **blog simples**, que permite criar, visualizar, editar e excluir postagens, explorando os principais fundamentos do Django aprendidos em aula.
 
